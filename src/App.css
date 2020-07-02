@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Squada+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+body {
+  text-align: center;
+  background-image: url("./bg.jpg");
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6em;
+}
+.header {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-family: "Squada One", cursive;
+  font-size: 10vw;
+  animation: animation 5s infinite;
+}
+
+button {
+  font-size: 1em;
+  background: lightgrey;
+  margin: 1vw;
+}
+input {
+  font-size: 1em;
+  width: 40vw;
+}
+p {
+  display: inline;
+}
+
+@keyframes animation {
+  0% {
+    margin-left: 0vw;
+  }
+  25% {
+    margin-left: 15vw;
+  }
+  50% {
+    margin-left: 0vw;
+  }
+  75% {
+    margin-left: -15vw;
+  }
+  100% {
+    margin-left: 0vw;
+  }
+}
+@media only screen and (max-width: 400px) {
+  button {
+    margin: 0px;
+    width: 90px;
+  }
+  input {
+    width: 40vw;
+  }
+  .header {
+    font-size: 20vw;
+  }
+}
