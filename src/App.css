@@ -52,14 +52,13 @@ p {
 }
 
 @media only screen and (max-width: 400px) {
-  button {
-    margin: 0px;
-    width: 90px;
-  }
   input {
-    width: 40vw;
+    width: 60vw;
   }
   .header {
     font-size: 20vw;
+  }
+  .reset {
+    display: none;
   }
 }

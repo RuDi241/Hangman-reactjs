@@ -27,7 +27,10 @@ class App extends React.Component {
   };
 
   handleClick = () => {
-    if (this.state.guessedLetters.has(this.state.currentLetter)) {
+    if (
+      this.state.guessedLetters.has(this.state.currentLetter) ||
+      this.state.currentLetter === " "
+    ) {
       alert("You guessed this letter before! Try another one!");
     } else {
       this.setState((prevState) => ({
@@ -86,7 +89,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1 className="header">Hangman</h1>
+        <h1 className="header" onClick={this.reset}>
+          Hangman
+        </h1>
         <button type="button" onClick={this.reset} className="reset">
           Reset
         </button>
