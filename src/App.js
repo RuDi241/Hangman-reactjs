@@ -19,7 +19,6 @@ class App extends React.Component {
     this.generateGuessedLetters = this.generateGuessedLetters.bind(this);
     this.reset = this.reset.bind(this);
   }
-
   handleChange = (e) => {
     this.setState({
       currentLetter: e.target.value.charAt(e.target.value.length - 1),
@@ -27,11 +26,13 @@ class App extends React.Component {
   };
 
   handleClick = () => {
-    if (
-      this.state.guessedLetters.has(this.state.currentLetter) ||
-      this.state.currentLetter === " "
-    ) {
+    if (this.state.guessedLetters.has(this.state.currentLetter)) {
       alert("You guessed this letter before! Try another one!");
+    } else if (
+      this.state.currentLetter.charCodeAt(0) < 97 ||
+      this.state.currentLetter.charCodeAt(0) > 122
+    ) {
+      alert("invalid input!");
     } else {
       this.setState((prevState) => ({
         guessed: prevState.guessedLetters.add(prevState.currentLetter),
@@ -79,7 +80,9 @@ class App extends React.Component {
 
   reset = () => {
     this.setState({
-      secretWord: "bc",
+      secretWord: words.words[
+        Math.floor(Math.random() * (words.words.length + 1))
+      ].toLowerCase(),
       guessedLetters: new Set(),
       mistakes: 0,
       currentLetter: "",
