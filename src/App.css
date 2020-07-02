@@ -18,6 +18,12 @@ button {
   font-size: 1em;
   background: lightgrey;
   margin: 1vw;
+  cursor: pointer;
+  color: #333333;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: grey;
 }
 input {
   font-size: 1em;
@@ -44,6 +50,7 @@ p {
     margin-left: 0vw;
   }
 }
+
 @media only screen and (max-width: 400px) {
   button {
     margin: 0px;
